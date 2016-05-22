@@ -1,0 +1,16 @@
+{
+    "name": "<%- name %>",
+    "builder": "@ali/builder-alinw",
+    "options": {
+        "type": "uxcore",
+        "template": "<%- template %>",
+        "npm": "<%- npm %>",
+        "vars": {
+            "locale": "zh-cn",
+            "__LOCAL__": true
+        },
+        "buildvars": {
+            "locale": [ "zh-cn", "en" ]
+        }
+    }
+}
