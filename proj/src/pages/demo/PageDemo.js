@@ -1,32 +1,67 @@
 require('./PageDemo.styl');
 
-var reactMixin = require('react-mixin');
+const reactMixin = require('react-mixin');
 
-let i18n = require('i18n');
+const i18n = require('i18n');
 
-let Actions = require('./actions');
-let Store = require('./store');
+const Actions = require('./actions');
+const Store = require('./store');
+
+const { Group, Avatar, Toast } = TingleUI;
 
 class Page extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            loaded: false,
+            content: {},
+            error: false
         };
     }
 
     componentDidMount() {
-        let me = this;
-        Actions.fetch({}, function(data) {
-            console.log(data);
+        this.handleClick('67955');
+    }
+
+    handleClick(workNo) {
+        Toast.show({
+            type: 'loading',
+            content: 'Loading'
+        });
+        Actions.fetch({
+            workNo: workNo
+        }, function(data) {
+            Toast.hide();
         });
     }
 
     render() {
-        let me = this;
+        let t = this;
         return (
             <div className="page-demo">
-                demo{i18n('page1.demo')}
+                <Group>
+                    <Group.Head>{i18n('page1.demo')}</Group.Head>
+                    <Group.List lineIndent={15} itemIndent={15}>
+                    {
+                        t.state.content.list ?
+                        t.state.content.list.map(function(item) {
+                            return (
+                                <div className="t-LH44 t-FBH t-FBAC" onClick={t.handleClick.bind(t, item.workNo)}>
+                                    <Avatar size="32" src={'//work.alibaba-inc.com/photo/' + item.workNo + '.32x32.jpg'}/>
+                                    <div className="t-FB1 t-PL10">
+                                        {item.name}{item.nickName ? '(' + item.nickName + ')' : ''}
+                                    </div>
+                                </div>
+                            )
+                        }) : (
+                            <div className="t-PL10 t-LH44 t-FBH t-FBAC t-FBJC">
+                                {t.state.error ? 'Error' : 'No data'}
+                            </div>
+                        )
+                    }
+                    </Group.List>
+                </Group>
             </div>
         );
     }

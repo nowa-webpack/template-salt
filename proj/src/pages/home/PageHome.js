@@ -1,8 +1,8 @@
 require('./PageHome.styl');
 
-var reactMixin = require('react-mixin');
+const reactMixin = require('react-mixin');
 
-let i18n = require('i18n');
+const { Toast, Button } = TingleUI;
 
 class PageHome extends React.Component {
 
@@ -12,11 +12,20 @@ class PageHome extends React.Component {
         };
     }
 
+    handleClick(options) {
+        Toast.show(options);
+    }
+
     render() {
-        let me = this;
+        let t = this;
         return (
             <div className="page-home">
-                home
+                <div className="t-PL16 t-PR16 t-PT20">
+                    <Button type="primary" onClick={t.handleClick.bind(t, {
+                        type: 'success',
+                        content: 'You clicked'
+                    })}>Click me</Button>
+                </div>
             </div>
         );
     }

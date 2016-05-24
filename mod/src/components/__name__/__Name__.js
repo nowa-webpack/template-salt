@@ -9,7 +9,6 @@ class <%- Name %> extends React.Component {
     }
 
     render() {
-        let me = this;
         return (
             <div className="<%= name %>">
                 component <%= name %>

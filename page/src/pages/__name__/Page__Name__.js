@@ -15,15 +15,7 @@ class <%- Name %> extends React.Component {
         };
     }
 
-    componentDidMount() {
-        let me = this;
-        Actions.fetch({}, function(data) {
-            console.log(data);
-        });
-    }
-
     render() {
-        let me = this;
         return (
             <div className="<%= name %>">
                 page <%= name %>
@@ -32,6 +24,9 @@ class <%- Name %> extends React.Component {
     }
 
     componentWillMount() {
+    }
+
+    componentDidMount() {
     }
 
     componentWillReceiveProps(nextProps) {

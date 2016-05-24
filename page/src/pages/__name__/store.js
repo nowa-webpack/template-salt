@@ -1,18 +1,16 @@
-var Actions = require('./actions');
+const Actions = require('./actions');
 
-var Store = Reflux.createStore({
+module.exports = Reflux.createStore({
     listenables: [Actions],
     data: {
         loaded: false
     },
 
     onFetch: function(params, cb) {
-        var t = this;
-        setTimeout(function() {
-            t.data.loaded = true;
-            t.updateComponent();
-            cb && cb(t.data);
-        }, 0);
+        let t = this;
+        t.data.loaded = true;
+        t.updateComponent();
+        cb && cb(t.data);
     },
 
     updateComponent: function() {
@@ -22,6 +20,4 @@ var Store = Reflux.createStore({
     getInitialState: function() {
         return this.data;
     }
-});
-
-module.exports = Store;
+});;

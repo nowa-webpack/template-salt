@@ -10,29 +10,28 @@ if (__LOCAL__ && window.chrome && window.chrome.webstore) { // This is a Chrome 
 // bind fastclick
 window.FastClick && FastClick.attach(document.body);
 
-var Router = ReactRouter;
-var DefaultRoute = Router.DefaultRoute;
-var Route = Router.Route;
-var RouteHandler = Router.RouteHandler;
+const { Router, Route, IndexRoute, Link, hashHistory } = ReactRouter;
 
-var PageHome = require('../pages/home');
-var PageDemo = require('../pages/demo');
+const PageHome = require('../pages/home');
+const PageDemo = require('../pages/demo');
 
 class App extends React.Component {
     render() {
-        return (<div>
-            <RouteHandler/>
-        </div>)
+        return (
+            <div>
+                {this.props.children}
+            </div>
+        );
     }
 }
 
-var routes = (
-    <Route name="app" path="/" handler={App}>
-        <DefaultRoute handler={PageHome}/>
-        <Route name="demo" handler={PageDemo}/>
-    </Route>
+ReactDOM.render(
+    <Router history={hashHistory}>
+        <Route name="app" path="/" component={App}>
+            <IndexRoute component={PageHome}/>
+            <Route path="home" component={PageHome}/>
+            <Route path="demo" component={PageDemo}/>
+        </Route>
+    </Router>,
+    document.getElementById('App')
 );
-
-Router.run(routes, function (Handler, state) {
-    React.render(<Handler/>, document.getElementById('App'));
-});
