@@ -1,7 +1,7 @@
 // See https://github.com/Jias/natty-fetch for more details.
 const DBContext = new NattyDB.Context({
-    mockUrlPrefix: 'http://dip.alibaba-inc.com/api/v2/services/schema/mock/',
-    urlPrefix: '',
+    mockUrlPrefix: '/mock/',
+    urlPrefix: '/',
     mock: true,
     // jsonp: true,
     withCredentials: false,
@@ -25,8 +25,8 @@ const DBContext = new NattyDB.Context({
 
 DBContext.create('SomeModuleAPI', {
     getSomeInfo: {
-        mockUrl: '27463',
-        url: '/query/getSomeInfo.json'
+        mockUrl: 'query/getSomeInfo.json',
+        url: 'query/getSomeInfo.json'
     }
 });
 

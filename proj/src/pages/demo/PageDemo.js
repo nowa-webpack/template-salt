@@ -48,7 +48,7 @@ class Page extends React.Component {
                         t.state.content.list.map(function(item) {
                             return (
                                 <div className="t-LH44 t-FBH t-FBAC" onClick={t.handleClick.bind(t, item.workNo)}>
-                                    <Avatar size="32" src={'//work.alibaba-inc.com/photo/' + item.workNo + '.32x32.jpg'}/>
+                                    <Avatar size="32"/>
                                     <div className="t-FB1 t-PL10">
                                         {item.name}{item.nickName ? '(' + item.nickName + ')' : ''}
                                     </div>
