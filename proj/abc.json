@@ -2,7 +2,7 @@
     "name": "<%- name %>",
     "builder": "@ali/builder-alinw",
     "options": {
-        "type": "uxcore",
+        "type": "salt",
         "template": "<%- template %>",
         "npm": "<%- npm %>",
         "vars": {

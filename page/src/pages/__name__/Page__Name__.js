@@ -1,11 +1,11 @@
 require('./Page<%- Name %>.styl');
 
-var reactMixin = require('react-mixin');
+const reactMixin = require('react-mixin');
 
-let i18n = require('i18n');
+const i18n = require('i18n');
 
-let Actions = require('./actions');
-let Store = require('./store');
+const Actions = require('./actions');
+const Store = require('./store');
 
 class <%- Name %> extends React.Component {
 
