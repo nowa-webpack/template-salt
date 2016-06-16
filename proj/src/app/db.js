@@ -1,5 +1,5 @@
 // See https://github.com/Jias/natty-fetch for more details.
-const DBContext = new NattyDB.Context({
+const DBContext = new salt.fetch.Context({
     mockUrlPrefix: '/mock/',
     urlPrefix: '/',
     mock: true,
