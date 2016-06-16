@@ -2,8 +2,6 @@ require('./PageDemo.styl');
 
 const reactMixin = require('react-mixin');
 
-const i18n = require('i18n');
-
 const Actions = require('./actions');
 const Store = require('./store');
 
@@ -41,7 +39,7 @@ class Page extends React.Component {
         return (
             <div className="page-demo">
                 <Group>
-                    <Group.Head>{i18n('page1.demo')}</Group.Head>
+                    <Group.Head>DEMO</Group.Head>
                     <Group.List lineIndent={15} itemIndent={15}>
                     {
                         t.state.content.list ?

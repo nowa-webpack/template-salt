@@ -20,6 +20,23 @@ class PageHome extends React.Component {
         location.hash = 'demo';
     }
 
+    handlePush() {
+        salt.router.push({
+            id: 'popwin',
+            url: './popwin.html',
+            anim: 2,
+            needPost: true,
+            param: {
+                foo: 1,
+                bar: 2
+            }
+        }).then().catch((e) => {
+            if (e.errorCode === 1001) {
+                location.href = './popwin.html';
+            }
+        });
+    }
+
     render() {
         let t = this;
         return (
@@ -29,6 +46,9 @@ class PageHome extends React.Component {
                         type: 'success',
                         content: 'You clicked'
                     })}>Click me</Button>
+                </div>
+                <div className="t-PL10 t-PR10 t-PT10">
+                    <Button type="secondary" onClick={t.handlePush.bind(t)}>Pop new window</Button>
                 </div>
                 <div className="t-PL10 t-PR10 t-PT10">
                     <Button type="secondary" onClick={t.handleLink}>Demo</Button>

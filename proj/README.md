@@ -26,10 +26,6 @@
     │   ├── app.js  ------------------- 项目级脚本逻辑
     │   ├── app.styl  ----------------- 全局样式
     ├── components  ------------------- 业务模块集合目录
-    ├── i18n  ------------------------- 国际化文案资源文件
-    │   ├── en.js
-    │   ├── index.js  ----------------- 国际化资源加载器
-    │   └── zh-cn.js
     ├── images  ----------------------- 图片资源目录
     └── pages  ------------------------ 页面集合目录
         └── demo  --------------------- 某一个页面
@@ -141,7 +137,8 @@ nowa
 {
     "buildvars": {
         "locale": [ "zh-cn", "en" ],
-        "container": [ "dingding", "nw" ]
+        "container": [ "dingding", "nw" ],
+        "__LOCAL__": [ false ]
     }
 }
 ```
@@ -165,11 +162,10 @@ nowa
 | 类库 | 全局名称 |
 | ---- | ------ |
 | React | React |
-| Reflux | Reflux |
 | ReactDOM | ReactDOM |
-| Lodash | _ |
-| jQuery | $ |
-| NattyDB | NattyDB |
+| ReactRouter | ReactRouter |
+| Reflux | Reflux |
+| zepto | $ |
 
 > [React](http://reactjs.cn/) 和 [Refulx](https://github.com/reflux/refluxjs) 的使用，请参考各自的官方文档。
 
@@ -180,31 +176,6 @@ Uxcore 组件库请参考[这里](http://uxco.re/)。
 ### 定制 Uxcore
 
 可通过在 abc.json 中增加相应配置来定制项目所需的 Uxcore，详见 [nowa-lib 插件](https://www.npmjs.com/package/nowa-lib)。
-
-## 国际化解决方案
-
-`src/i18n` 目录为国际化文案资源文件存放目录，其中除了 `index.js` 之外的文件均为国际化语言资源文件。
-
-`index.html` 中通过请求不同后缀的 js 文件（home-zh-cn.js、home-en.js）来指定当前使用语言。
-
-可以修改 `abc.json` 中的 `options.vars.locale` 变量的值来指定当前调试环境使用的语言。
-
-js文件中可使用如下方法来注入国际化文案：
-
-```js
-let i18n = require('i18n');
-...
-i18n("key"[, argv1[, argv2...]])
-```
-
-首先会找到对应的语言资源文件，然后通过 key 对应到文案模板。
-
-如果文案中有 `{0}{1}` 变量，将使用 argvX 参数进行替换，更详细的使用说明请参考[这里](https://www.npmjs.com/package/i18n-helper)。
-
-- 国际化资源文件索引命名规范：
-  - 全局公用资源：global.xxx
-  - 模块所属资源：moduleName.xxx
-  - 页面所属资源：pageName.xxx
 
 ## 项目中使用图标（或图片）
 
@@ -246,7 +217,7 @@ render() {
 
 ## 数据层和模拟数据解决方案
 
-- 请参考 [NattyDB 官方文档](http://jias.github.io/natty-db/)。
+- 请参考 [SaltFetch 官方文档](https://github.com/saltjs/salt-fetch)。
 
 ## 其他
 
