@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>test</title>
+<title><%= name %></title>
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
@@ -13,19 +13,29 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="email=no">
 
+<!-- 外部样式资源加载 -->
+<link rel="stylesheet" href="//g.alicdn.com/platform/tingle-ui/1.0.3/dd.min.css">
+
 <!-- 外部脚本资源加载 -->
-<script src="//g.alicdn.com/platform/c/??zepto/1.1.6/zepto.min.js,react/0.14.3/react-with-addons.min.js,react/0.14.3/react-dom.min.js,react-router/2.0.0/umd/ReactRouter.min.js,fastclick/1.0.6/lib/fastclick.min.js,lie/3.0.2/dist/lie.polyfill.min.js,natty-db/1.0.2/dist/natty-db.min.js,reflux/0.3.0/dist/reflux.min.js,salt-router/0.0.1/salt-router.min.js"></script>
+<script src="//g.alicdn.com/platform/c/??zepto/1.1.6/zepto.min.js,react/0.14.3/react-with-addons.min.js,react/0.14.3/react-dom.min.js,react-router/2.0.0/umd/ReactRouter.min.js,fastclick/1.0.6/lib/fastclick.min.js,reflux/0.3.0/dist/reflux.min.js,lie/3.0.2/dist/lie.polyfill.min.js,salt-fetch/1.0.0-rc4/dist/salt-fetch.js,salt-router/0.0.1/salt-router.min.js"></script>
+<script src="//g.alicdn.com/dingding/open-develop/0.6.4/dingtalk-ali.js"></script>
 </head>
 <body>
-Got message:<br>
-<textarea id="J_Result"></textarea><br>
-<a href="javascript:;" id="J_Close">Close</a>
+<div class="t-PL10 t-PR10 t-PT10 t-field t-textarea-field">
+    <div class="t-field-box t-FBH">
+        <div class="t-field-layout-h-label">Message:</div>
+        <div class="t-FB1 t-PR t-field-multi">
+            <textarea class="t-textarea-field-content" rows="3" id="J_Result"></textarea>
+        </div>
+    </div>
+</div>
+<div class="t-PL10 t-PR10 t-PT10">
+    <div class="t-FBH t-FBAC t-FBJC t-button t-button-secondary" id="J_Close">Close</div>
+</div>
 <script>
 $('#J_Result').val(salt.router.getMessage('popwin') || localStorage.getItem('popwin') || '');
 $('#J_Close').click(function() {
-    salt.router.pop({
-        to: 'index.html'
-    }).then().catch(function(e) {
+    salt.router.pop({}).catch(function(e) {
         if (e.errorCode === 1001) {
             location.href = './index.html';
         }

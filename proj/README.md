@@ -155,7 +155,7 @@ nowa
 
 具体请参考[这里](http://gitlab.alibaba-inc.com/uxcore/uxcore-kuma/tree/master)。
 
-## 外部工具
+## 外部工具库
 
 脚手架默认引入了以下外部工具库：
 
@@ -169,13 +169,9 @@ nowa
 
 > [React](http://reactjs.cn/) 和 [Refulx](https://github.com/reflux/refluxjs) 的使用，请参考各自的官方文档。
 
-## Uxcore 模块
+## SaltUI
 
-Uxcore 组件库请参考[这里](http://uxco.re/)。
-
-### 定制 Uxcore
-
-可通过在 abc.json 中增加相应配置来定制项目所需的 Uxcore，详见 [nowa-lib 插件](https://www.npmjs.com/package/nowa-lib)。
+SaltUI 是钉钉微应用默认提供的 UI 库，基于 React 实现。访问 [SaltUI 官网](https://github.com/saltjs/salt-ui/blob/master/README.md)了解更多。
 
 ## 项目中使用图标（或图片）
 

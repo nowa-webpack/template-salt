@@ -2,7 +2,7 @@ require('./PageHome.styl');
 
 const reactMixin = require('react-mixin');
 
-const { Toast, Button } = TingleUI;
+const { Toast, Button } = SaltUI;
 
 class PageHome extends React.Component {
 

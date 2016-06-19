@@ -5,7 +5,7 @@ const reactMixin = require('react-mixin');
 const Actions = require('./actions');
 const Store = require('./store');
 
-const { Group, Avatar, Toast } = TingleUI;
+const { Group, Avatar, Toast, Button } = SaltUI;
 
 class Page extends React.Component {
 
@@ -19,7 +19,7 @@ class Page extends React.Component {
     }
 
     componentDidMount() {
-        this.handleClick('67955');
+        this.handleClick('1234');
     }
 
     handleClick(workNo) {
@@ -32,6 +32,10 @@ class Page extends React.Component {
         }, function(data) {
             Toast.hide();
         });
+    }
+
+    handleBack() {
+        salt.router.goBack();
     }
 
     render() {
@@ -60,6 +64,9 @@ class Page extends React.Component {
                     }
                     </Group.List>
                 </Group>
+                <div className="t-PL10 t-PR10 t-PT10">
+                    <Button type="secondary" onClick={t.handleBack}>Back</Button>
+                </div>
             </div>
         );
     }
