@@ -1,12 +1,9 @@
 require('./Page<%- Name %>.styl');
-
+<% if (store) { %>
 const reactMixin = require('react-mixin');
-
-const i18n = require('i18n');
-
 const Actions = require('./actions');
 const Store = require('./store');
-
+<% } %>
 class <%- Name %> extends React.Component {
 
     constructor(props) {
@@ -45,7 +42,7 @@ class <%- Name %> extends React.Component {
     componentWillUnmount() {
     }
 }
-
+<% if (store) { %>
 reactMixin.onClass(<%- Name %>, Reflux.connect(Store));
-
+<% } %>
 module.exports = <%- Name %>;
