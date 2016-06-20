@@ -1,5 +1,5 @@
 const Actions = require('./actions');
-const db = require('../../app/db');
+const DB = require('../../app/db');
 
 module.exports = Reflux.createStore({
     listenables: [Actions],
