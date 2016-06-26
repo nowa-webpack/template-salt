@@ -37,7 +37,7 @@ $('#J_Result').val(salt.router.getMessage('popwin') || localStorage.getItem('pop
 $('#J_Close').click(function() {
     salt.router.pop({}).catch(function(e) {
         if (e.errorCode === 1001) {
-            location.href = './index.html';
+            location.href = '/index.html';
         }
     });
 });
