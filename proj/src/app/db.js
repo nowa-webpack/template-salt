@@ -1,5 +1,5 @@
 // See https://github.com/Jias/natty-fetch for more details.
-const DBContext = new salt.fetch.Context({
+const API = salt.fetch.context({
     mockUrlPrefix: '/mock/',
     urlPrefix: '/',
     mock: true,
@@ -21,13 +21,13 @@ const DBContext = new salt.fetch.Context({
             }
         }
     }
-});
+}).api;
 
-DBContext.create('SomeModuleAPI', {
+API.create('SomeModuleAPI', {
     getSomeInfo: {
         mockUrl: 'query/getSomeInfo.json',
         url: 'query/getSomeInfo.json'
     }
 });
 
-module.exports = DBContext;
+module.exports = API;
