@@ -38,7 +38,7 @@
 
 ## 环境准备
 
-具体请参考[这里](http://ux.alibaba.net/products/nowa.html)
+具体请参考[这里](http://nowa-webpack.github.io/docs/an_zhuang.html)
 
 环境准备妥当之后，把项目clone下来，切换到对应分支。更新项目依赖：
 
@@ -86,15 +86,11 @@ nowa init page
 nowa
 ```
 
-- git 命令
-
-[Git发布操作流程和日常使用技巧](http://ux.alibaba.net/docs/git-publish.html)
-
 - 更多命令和参数（端口、代理、依赖库、国际化、热构建、https……）
 
 请查看 nowa 的官方文档：
 
-[https://www.npmjs.com/package/nowa](https://www.npmjs.com/package/nowa)
+[http://nowa-webpack.github.io/docs/](http://nowa-webpack.github.io/docs/)
 
 ## 页面引用资源列表
 
@@ -153,7 +149,7 @@ nowa
 
 ## CSS约定
 
-具体请参考[这里](http://gitlab.alibaba-inc.com/uxcore/uxcore-kuma/tree/master)。
+具体请参考[这里](http://uxco.re/css/base/)。
 
 ## 外部工具库
 
