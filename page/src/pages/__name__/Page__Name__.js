@@ -43,6 +43,6 @@ class <%- Name %> extends React.Component {
     }
 }
 <% if (store) { %>
-reactMixin.onClass(<%- Name %>, Reflux.connect(Store));
+reactMixin.onClass(<%- Name %>, Reflux.connect(Store, '<%- Name %>'));
 <% } %>
 module.exports = <%- Name %>;
