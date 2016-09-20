@@ -72,6 +72,6 @@ class Page extends React.Component {
     }
 }
 
-reactMixin.onClass(Page, Reflux.connect(Store));
+reactMixin.onClass(Page, Reflux.connect(Store, 'demo'));
 
 module.exports = Page;
