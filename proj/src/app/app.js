@@ -1,5 +1,5 @@
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import { setup, LogicRender } from 'no-flux';
+import { setup, LogicRender } from 'refast';
 import { Component } from 'react';
 import { render } from 'react-dom';
 import FastClick from 'fastclick';

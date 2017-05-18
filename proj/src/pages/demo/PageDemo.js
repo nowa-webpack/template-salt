@@ -1,4 +1,4 @@
-import { Component } from 'no-flux';
+import { Component } from 'refast';
 import List from 'components/list';
 import Info from 'components/info';
 import logic from './logic';

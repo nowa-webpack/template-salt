@@ -1,6 +1,6 @@
 import { withRouter } from 'react-router'; <% if (i18n) { %>
 import i18n from 'i18n';<% } %><% if (logic) { %>
-import { Component } from 'no-flux';
+import { Component } from 'refast';
 import logic from './logic';
 import './Page<%- Name %>.less';
 
