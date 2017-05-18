@@ -1,48 +1,41 @@
-require('./Page<%- Name %>.styl');
-<% if (store) { %>
-const reactMixin = require('react-mixin');
-const Actions = require('./actions');
-const Store = require('./store');
-<% } %>
-class <%- Name %> extends React.Component {
+import { withRouter } from 'react-router'; <% if (i18n) { %>
+import i18n from 'i18n';<% } %><% if (logic) { %>
+import { Component } from 'no-flux';
+import logic from './logic';
+import './Page<%- Name %>.less';
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
+class Page<%- Name %> extends Component {
 
-    render() {
-        return (
-            <div className="<%= name %>">
-                page <%= name %>
-            </div>
-        );
-    }
+  constructor(props) {
+    super(props, logic);
+  }
 
-    componentWillMount() {
-    }
-
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
+  render() {
+    return (
+      <div className="page-<%= name %>">
+        page <%= name %>
+      </div>
+    );
+  }
 }
-<% if (store) { %>
-reactMixin.onClass(<%- Name %>, Reflux.connect(Store, '<%- Name %>'));
+<% } else { %>
+import { Component } from 'react';
+import './Page<%- Name %>.less';
+
+class Page<%- Name %> extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div className="page-<%= name %>">
+        page <%= name %>
+      </div>
+    );
+  }
+}
 <% } %>
-module.exports = <%- Name %>;
+export default withRouter(Page<%- Name %>);

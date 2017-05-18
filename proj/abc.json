@@ -1,14 +1,23 @@
 {
-    "name": "<%- name %>",
-    "options": {
-        "type": "salt",
-        "template": "<%- template %>",
-        "npm": "<%- npm %>",
-        "vars": {
-            "__LOCAL__": true
-        },
-        "buildvars": {
-            "__LOCAL__": [ false ]
-        }
+  "name": "<%- name %>",
+  "options": {
+    "type": "salt",
+    "template": "<%- template %>",
+    "npm": "<%- npm %>",
+    "vars": {
+      "__LOCAL__": true
+    },
+    "buildvars": {
+      "__LOCAL__": [
+        false
+      ]
+    },
+    "alias": {
+      "pages":"pages",
+      "components":"components",
+      "db":"app/db.js",
+      "variables":"app/variables.js",
+      "i18n": "i18n"
     }
+  }
 }

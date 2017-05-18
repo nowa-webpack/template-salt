@@ -1,77 +1,43 @@
-require('./PageDemo.styl');
+import { Component } from 'no-flux';
+import List from 'components/list';
+import Info from 'components/info';
+import logic from './logic';
+import './PageDemo.less';
 
-const reactMixin = require('react-mixin');
+const { Group } = window.SaltUI;
 
-const Actions = require('./actions');
-const Store = require('./store');
+export default class Page extends Component {
 
-const { Group, Avatar, Toast, Button } = SaltUI;
+  constructor(props) {
+    super(props, logic);
+  }
 
-class Page extends React.Component {
+  componentDidMount() {
+    this.handleClick('1234');
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            loaded: false,
-            content: {},
-            error: false
-        };
-    }
+  handleClick(workNo) {
+    this.execute('fetch', { workNo });
+  }
 
-    componentDidMount() {
-        this.handleClick('1234');
-    }
+  render() {
+    const t = this;
+    const { list = [], error } = t.state;
+    const Tag = list && list.length ? List : Info;
 
-    handleClick(workNo) {
-        Toast.show({
-            type: 'loading',
-            content: 'Loading'
-        });
-        Actions.fetch({
-            workNo: workNo
-        }, function(data) {
-            Toast.hide();
-        });
-    }
-
-    handleBack() {
-        salt.router.goBack();
-    }
-
-    render() {
-        let t = this;
-        return (
-            <div className="page-demo">
-                <Group>
-                    <Group.Head>DEMO</Group.Head>
-                    <Group.List lineIndent={15} itemIndent={15}>
-                    {
-                        t.state.content.list ?
-                        t.state.content.list.map(function(item) {
-                            return (
-                                <div className="t-LH44 t-FBH t-FBAC" onClick={t.handleClick.bind(t, item.workNo)}>
-                                    <Avatar size="32"/>
-                                    <div className="t-FB1 t-PL10">
-                                        {item.name}{item.nickName ? '(' + item.nickName + ')' : ''}
-                                    </div>
-                                </div>
-                            )
-                        }) : (
-                            <div className="t-PL10 t-LH44 t-FBH t-FBAC t-FBJC">
-                                {t.state.error ? 'Error' : 'No data'}
-                            </div>
-                        )
-                    }
-                    </Group.List>
-                </Group>
-                <div className="t-PL10 t-PR10 t-PT10">
-                    <Button type="secondary" onClick={t.handleBack}>Back</Button>
-                </div>
-            </div>
-        );
-    }
+    return (
+      <div className="page-demo">
+        <Group>
+          <Group.Head>DEMO</Group.Head>
+          <Group.List lineIndent={15} itemIndent={15}>
+            <Tag
+              list={list}
+              error={error}
+              onClick={t.handleClick.bind(t)}
+            />
+          </Group.List>
+        </Group>
+      </div>
+    );
+  }
 }
-
-reactMixin.onClass(Page, Reflux.connect(Store));
-
-module.exports = Page;

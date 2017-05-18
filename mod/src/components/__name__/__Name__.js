@@ -1,42 +1,23 @@
-require('./<%- Name %>.styl');
+import { Component } from 'react';
+import './<%- Name %>.less';
 
-class <%- Name %> extends React.Component {
+export default class <%- Name %> extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        return (
-            <div className="<%= name %>">
-                component <%= name %>
-            </div>
-        );
-    }
+  static defaultProps = {
 
-    componentWillMount() {
-    }
+  }
+  static propTypes = {
 
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
+  }
+  render() {
+    return (
+      <div className="mod-<%= name %>">
+        component <%= name %>
+      </div>
+    );
+  }
 }
-
-module.exports = <%- Name %>;

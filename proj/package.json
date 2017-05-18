@@ -16,6 +16,8 @@
   "dependencies": {
     "classnames": "~2.1.2",
     "i18n-helper": "~1.1.1",
-    "react-mixin": "~1.7.0"
+    "no-flux": "latest",
+    "natty-storage": "~2.0.2",
+    "natty-fetch": "~2.4.2"
   }
 }
