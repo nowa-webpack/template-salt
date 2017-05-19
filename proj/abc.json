@@ -16,8 +16,7 @@
       "pages":"pages",
       "components":"components",
       "db":"app/db.js",
-      "variables":"app/variables.js",
-      "i18n": "i18n"
+      "variables":"app/variables.js"
     }
   }
 }
