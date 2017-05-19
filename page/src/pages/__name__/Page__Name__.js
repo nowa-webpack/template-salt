@@ -1,9 +1,9 @@
-import { withRouter } from 'react-router'; <% if (logic) { %>
+<% if (logic) { %>
 import { Component } from 'refast';
 import logic from './logic';
 import './Page<%- Name %>.less';
 
-class Page<%- Name %> extends Component {
+export default class Page<%- Name %> extends Component {
 
   constructor(props) {
     super(props, logic);
@@ -21,7 +21,7 @@ class Page<%- Name %> extends Component {
 import { Component } from 'react';
 import './Page<%- Name %>.less';
 
-class Page<%- Name %> extends Component {
+export default class Page<%- Name %> extends Component {
 
   constructor(props) {
     super(props);
@@ -37,4 +37,3 @@ class Page<%- Name %> extends Component {
   }
 }
 <% } %>
-export default withRouter(Page<%- Name %>);
