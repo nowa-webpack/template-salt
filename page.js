@@ -1,9 +1,9 @@
 // prompt for page
 exports.prompts = [
   {
-    name: 'store',
+    name: 'logic',
     type: 'confirm',
-    message: 'Generate store & actions?'
+    message: 'use refast flux?'
   }
 ];
 
@@ -20,7 +20,7 @@ exports.answers = function(answers, abc) {
 
 // filter out files
 exports.filter = function(source, data) {
-  if (!data.store) {
-    return !/(actions|store)\.js$/.test(source);
+  if (!data.logic) {
+    return !/logic\.js$/.test(source);
   }
 };
