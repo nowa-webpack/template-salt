@@ -3,7 +3,6 @@ import { setup, LogicRender } from 'refast';
 import { Component } from 'react';
 import { render } from 'react-dom';
 import FastClick from 'fastclick';
-import { assign } from 'lodash';
 import { isDev } from 'variables';
 
 import PageHome from 'pages/home';
@@ -37,7 +36,7 @@ const Empty = () => <div>暂无数据</div>;
 
 // 修改 LogicRender 增加默认配置
 // 用来自定义Loading和Empty的样式
-assign(LogicRender.defaultProps, { Empty, Loading });
+Object.assign(LogicRender.defaultProps, { Empty, Loading });
 
 class App extends Component {
   render() {
