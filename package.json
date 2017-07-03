@@ -1,0 +1,20 @@
+{
+  "name": "template-salt",
+  "version": "1.0.3",
+  "description": "h5 project template using saltui",
+  "main": "mod.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nowa-webpack/template-salt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nowa-webpack/template-salt/issues"
+  },
+  "homepage": "https://github.com/nowa-webpack/template-salt#readme"
+}
