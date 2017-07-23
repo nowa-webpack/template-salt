@@ -17,7 +17,7 @@ export default class Page extends Component {
   }
 
   handleClick(workNo) {
-    this.execute('fetch', { workNo });
+    this.dispatch('fetch', { workNo });
   }
 
   render() {

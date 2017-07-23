@@ -1,5 +1,5 @@
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import { setup, LogicRender } from 'refast';
+import Refast, { LogicRender } from 'refast';
 import { Component } from 'react';
 import { render } from 'react-dom';
 import FastClick from 'fastclick';
@@ -21,10 +21,11 @@ if (isDev && window.chrome && window.chrome.webstore) { // This is a Chrome only
 }
 
 // bind fastclick
-FastClick && FastClick.attach(document.body);
+FastClick.attach(document.body);
 
-// 这里使用setup来配置noflux
-setup('fn', {
+// 这里使用 use 来配置 Refast
+// Refast 文档 https://recore.github.io/refast-docs/
+Refast.use('fn', {
   toast: Toast,
   dialog: Dialog,
   DB,
