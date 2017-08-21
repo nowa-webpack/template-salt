@@ -160,8 +160,6 @@ nowa
 | React | React |
 | ReactDOM | ReactDOM |
 | ReactRouter | ReactRouter |
-| Reflux | Reflux |
-| zepto | $ |
 
 > [React](http://reactjs.cn/) 和 [Refulx](https://github.com/reflux/refluxjs) 的使用，请参考各自的官方文档。
 
