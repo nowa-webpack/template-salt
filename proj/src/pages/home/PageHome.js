@@ -1,7 +1,9 @@
 import { Component } from 'react';
-import './PageHome.less';
 
-const { Toast, Button } = window.SaltUI;
+import Toast from 'saltui/lib/Toast';
+import Button from 'saltui/lib/Button';
+
+import './PageHome.less';
 
 export default class PageHome extends Component {
 

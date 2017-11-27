@@ -3,14 +3,15 @@ import Refast, { LogicRender } from 'refast';
 import { Component } from 'react';
 import { render } from 'react-dom';
 import FastClick from 'fastclick';
-import { isDev } from 'variables';
+import Toast from 'saltui/lib/Toast';
+import Dialog from 'saltui/lib/Dialog';
 
+import { isDev } from 'variables';
 import PageHome from 'pages/home';
 import PageDemo from 'pages/demo';
 import DB from 'db';
 import './app.less';
 
-const { Toast, Dialog } = window.SaltUI;
 const customHistory = hashHistory;
 
 if (isDev && window.chrome && window.chrome.webstore) { // This is a Chrome only hack

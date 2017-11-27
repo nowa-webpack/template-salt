@@ -1,4 +1,4 @@
-const { Avatar } = window.SaltUI;
+import Avatar from 'saltui/lib/Avatar';
 
 export default ({ list, onClick }) => (
   <div>

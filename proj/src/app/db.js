@@ -1,7 +1,7 @@
 import nattyFetch from 'natty-fetch';
-import { urlPrefix, isDev } from './variables';
+import Toast from 'saltui/lib/Toast';
 
-const { Toast } = window.SaltUI;
+import { urlPrefix, isDev } from './variables';
 
 // See https://github.com/Jias/natty-fetch for more details.
 const context = nattyFetch.context({

@@ -12,6 +12,9 @@
         false
       ]
     },
+    "injects": [
+      "saltui"
+    ],
     "alias": {
       "pages":"pages",
       "components":"components",

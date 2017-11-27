@@ -1,10 +1,10 @@
 import { Component } from 'refast';
+import Group from 'saltui/lib/Group';
+
 import List from 'components/list';
 import Info from 'components/info';
 import logic from './logic';
 import './PageDemo.less';
-
-const { Group } = window.SaltUI;
 
 export default class Page extends Component {
 

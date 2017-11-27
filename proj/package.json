@@ -17,6 +17,7 @@
     "classnames": "~2.1.2",
     "refast": "~1.2.3",
     "natty-storage": "~2.0.2",
-    "natty-fetch": "~2.4.2"
+    "natty-fetch": "~2.4.2",
+    "saltui": "^3.1.17"
   }
 }
