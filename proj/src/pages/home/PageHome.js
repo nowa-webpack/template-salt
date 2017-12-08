@@ -1,7 +1,6 @@
 import { Component } from 'react';
 
-import Toast from 'saltui/lib/Toast';
-import Button from 'saltui/lib/Button';
+import { Toast, Button } from 'saltui';
 
 import './PageHome.less';
 

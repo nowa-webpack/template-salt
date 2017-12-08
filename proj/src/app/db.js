@@ -1,5 +1,5 @@
 import nattyFetch from 'natty-fetch';
-import Toast from 'saltui/lib/Toast';
+import { Toast } from 'saltui';
 
 import { urlPrefix, isDev } from './variables';
 

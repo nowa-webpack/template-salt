@@ -1,4 +1,4 @@
-import Avatar from 'saltui/lib/Avatar';
+import { Avatar } from 'saltui';
 
 export default ({ list, onClick }) => (
   <div>

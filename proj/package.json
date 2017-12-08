@@ -19,5 +19,8 @@
     "natty-storage": "~2.0.2",
     "natty-fetch": "~2.4.2",
     "saltui": "^3.1.17"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.6.2"
   }
 }

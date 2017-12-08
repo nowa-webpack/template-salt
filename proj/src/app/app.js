@@ -3,8 +3,7 @@ import Refast, { LogicRender } from 'refast';
 import { Component } from 'react';
 import { render } from 'react-dom';
 import FastClick from 'fastclick';
-import Toast from 'saltui/lib/Toast';
-import Dialog from 'saltui/lib/Dialog';
+import { Toast, Dialog } from 'saltui';
 
 import { isDev } from 'variables';
 import PageHome from 'pages/home';

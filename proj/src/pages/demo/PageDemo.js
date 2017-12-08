@@ -1,5 +1,5 @@
 import { Component } from 'refast';
-import Group from 'saltui/lib/Group';
+import { Group } from 'saltui';
 
 import List from 'components/list';
 import Info from 'components/info';
