@@ -1,6 +1,6 @@
 {
   "name": "nowa-template-salt",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "h5 project template using saltui",
   "main": "page.js",
   "scripts": {
