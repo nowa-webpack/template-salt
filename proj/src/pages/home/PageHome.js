@@ -14,6 +14,10 @@ export default class PageHome extends Component {
     location.hash = 'demo';
   }
 
+  handleLink2() {
+    location.hash = 'ding';
+  }
+
   handlePush() {
     window.salt.router.push({
       id: 'popwin',
@@ -47,6 +51,9 @@ export default class PageHome extends Component {
         </div>
         <div className="t-PL10 t-PR10 t-PT10">
           <Button type="secondary" onClick={t.handleLink}>Demo</Button>
+        </div>
+        <div className="t-PL10 t-PR10 t-PT10">
+          <Button type="secondary" onClick={t.handleLink2.bind(t)}>DingTalk</Button>
         </div>
       </div>
     );
