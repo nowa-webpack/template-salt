@@ -37,7 +37,8 @@ const Empty = () => <div>暂无数据</div>;
 
 // 修改 LogicRender 增加默认配置
 // 用来自定义Loading和Empty的样式
-Object.assign(LogicRender.defaultProps, { Empty, Loading });
+LogicRender.defaultProps.Empty = Empty;
+LogicRender.defaultProps.Loading = Loading;
 
 class App extends Component {
   render() {
